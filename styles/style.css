@@ -1,0 +1,87 @@
+/* Рассказать в рекомендациях */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Рассказать про наследование высоты */
+
+html {
+  height: 100%;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  min-width: 800px;
+  height: 100%;
+  margin: 0;
+  padding-top: 60px;
+  font-family: Mulish, sans-serif;
+  background-color: #fec7ee;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.page__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.page__title {
+  /* Умышленно не делаю блок position: relative; рассказать про это */
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 116px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.page__title::after {
+  content: '*';
+  position: relative;
+  bottom: 32px;
+}
+
+.page__title:hover {
+  color: #4c4c4c;
+
+  /* Подсказать */
+  cursor: default;
+}
+
+.page__title:hover::before {
+  /* Рассказать про хак с переносом строки */
+  content: 'На самом деле нет.\AВажнее &mdash; научиться ошибаться.';
+  position: absolute;
+  top: 180px;
+  right: 20px;
+  max-width: 760px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 36px 44px;
+  box-shadow: 0 12px 0 #000;
+  color: #000;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 1;
+  text-align: left;
+  text-transform: initial;
+  background-color: #fff;
+
+  /* Рассказать про хак с переносом строки */
+  white-space: pre;
+}

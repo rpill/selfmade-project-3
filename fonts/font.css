@@ -1,0 +1,15 @@
+@font-face {
+  font-family: Mulish;
+  src:
+    url(./Mulish-Black.woff2) format('woff2'),
+    url(./Mulish-Black.woff) format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Mulish;
+  src:
+    url(./Mulish-Regular.woff2) format('woff2'),
+    url(./Mulish-Regular.woff) format('woff');
+  font-weight: normal;
+}
